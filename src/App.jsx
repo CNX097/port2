@@ -112,19 +112,21 @@ export default function Portfolio() {
         }
       `}</style>
 
-      {/* 1. NỀN CHUYỂN ĐỘNG AMBIENT GLOW BACKGROUND (Z-0) */}
-      <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none bg-black">
-        {/* Khối sáng mờ chuyển động 1 */}
-        <div className="absolute -top-32 -left-32 w-[500px] h-[500px] bg-white/10 rounded-full blur-[120px] animate-pulse" />
-        
-        {/* Khối sáng mờ trung tâm */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-white/5 rounded-full blur-[150px]" />
-        
-        {/* Khối sáng mờ chuyển động 2 */}
-        <div className="absolute -bottom-32 -right-32 w-[600px] h-[600px] bg-white/10 rounded-full blur-[140px] animate-pulse" />
-        
-        {/* Lớp phủ Grid đốm mịn */}
-        <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.05)_1px,transparent_1px)] [background-size:24px_24px] opacity-40" />
+     {/* 1. NỀN CHUYỂN ĐỘNG / VIDEO AMBIENT BACKGROUND (Z-0) */}
+      <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover scale-105 opacity-30 grayscale filter blur-[1px]"
+        >
+          <source 
+            src="https://cdn.pixabay.com/video/2021/04/12/70884-536412158_large.mp4" 
+            type="video/mp4" 
+          />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/90" />
       </div>
       
       {/* 2. CHÍNH: FULLSCREEN HERO VIEW (Z-10) - TWO PANEL SPLIT */}
